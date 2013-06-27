@@ -1,1 +1,4 @@
 alias rdp='rdesktop -d bkkruv -u admin247 -p - -g 1024x768 -z'
+alias ll='ls -l'
+alias la='ls -A'
+alias l='ls -CF'
