@@ -1,0 +1,1 @@
+alias rdp='rdesktop -d bkkruv -u admin247 -p - -g 1024x768 -z'
