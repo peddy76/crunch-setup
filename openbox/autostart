@@ -21,7 +21,10 @@
 xrandr | grep HDMI3 | grep " connected "
 if [ $? -eq 0 ]; then
     # External monitor is connected
-    xrandr --output HDMI3 --mode 1680x1050 --pos 0x0 --rotate normal --output LVDS1 --mode 1600x900 --pos 1680x0 --rotate normal    
+    # xrandr --output HDMI3 --mode 1680x1050 --pos 0x0 --rotate normal --output LVDS1 --mode 1600x900 --pos 1680x0 --rotate normal
+    xrandr --output HDMI3 --mode 1680x1050 --pos 0x0 --rotate normal --output LVDS1 --off
+    synergyc bkkit01
+    setxkbmap de
     if [ $? -ne 0 ]; then
         # Something went wrong. Autoconfigure the internal monitor and disable the external one
         xrandr --output LVDS1 --mode auto --output HDMI3 --off
@@ -95,5 +98,5 @@ cb-cowpowers &
 conky -q &
 
 # Autostart the Dropbox deamon
-(sleep 60s && ~/.dropbox-dist/dropboxd) &
+(sleep 30s && ~/.dropbox-dist/dropboxd) &
 
