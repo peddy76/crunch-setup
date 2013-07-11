@@ -44,6 +44,24 @@ Bundle 'scrooloose/nerdcommenter'
 " Supertab https://github.com/ervandew/supertab
 Bundle 'ervandew/supertab'
 
+" Snipmate https://github.com/garbas/vim-snipmate
+Bundle "MarcWeber/vim-addon-mw-utils"
+Bundle "tomtom/tlib_vim"
+Bundle 'garbas/vim-snipmate'
+Bundle 'honza/vim-snippets'
+
+" Solarized ColorsScheme https://github.com/altercation/vim-colors-solarized
+Bundle 'altercation/vim-colors-solarized'
+
+" Taglist https://github.com/vim-scripts/taglist.vim
+Bundle 'vim-scripts/taglist.vim'
+
+" Multiple Cursors https://github.com/terryma/vim-multiple-cursors
+Bundle 'terryma/vim-multiple-cursors'
+
+" Expand Region https://github.com/terryma/vim-expand-region
+Bundle 'terryma/vim-expand-region'
+
 " Installing plugins the first time
 if iCanHazVundle == 0
     echo "Installing Bundles, please ignore key map error messages"
@@ -58,6 +76,14 @@ endif
 " Syntax highlighting on
 syntax on
 
+" Set colors
+" set background=dark
+" colorscheme solarized
+
+" Linenumbers
+map <F3> :set relativenumber!<CR>
+map <F4> :set number!<CR>
+
 " Automatic reloading of .vimrc
 autocmd! bufwritepost .vimrc source %
 
@@ -70,9 +96,21 @@ nmap <leader>l :set list!<CR>
 " Use the same symbols as TextMate for tabstops and EOLs
 set listchars=tab:▸\ ,eol:¬
 
+" Taglist Plugin Settings
+nnoremap <silent> <F8> :TlistToggle<CR>
+
 "Invisible character colors
 "highlight NonText guifg=#4a4a59
 "highlight SpecialKey guifg=#4a4a59
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Text, tab and indent related
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+set tabstop=4
+set softtabstop=4
+set shiftwidth=4
+set expandtab
 
 " Syntax of these languages is fussy over tabs Vs spaces
 autocmd FileType make setlocal ts=8 sts=8 sw=8 noexpandtab
@@ -85,15 +123,6 @@ autocmd FileType javascript setlocal ts=4 sts=4 sw=4 noexpandtab
 
 " Treat .rss files as XML
 autocmd BufNewFile,BufRead *.rss setfiletype xml
-
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Text, tab and indent related
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-set tabstop=4
-set softtabstop=4
-set shiftwidth=4
-set expandtab
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
